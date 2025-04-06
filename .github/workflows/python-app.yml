@@ -19,8 +19,8 @@ jobs:
        source venv/bin/activate
        pip install --upgrade pip
        pip install -r requirements.txt
-       - name: Deploy to Render
-         env:
+    - name: Deploy to Render
+      env:
           RENDER_API_KEY: ${{ secrets.RENDER_API_KEY }}
-       run: |
+      run: |
         curl -X POST https://api.render.com/deploy/srv-cvd7bodumphs73e9qaig?key=$RENDER_API_KEY
